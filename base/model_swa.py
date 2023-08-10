@@ -38,7 +38,7 @@ def main():
 
     weights_dicts = []
     dir = args.model-dir
-    # dir = '/root/autodl-tmp/Open-TransMind/PAZHOU/base/outputs/swinbase_joint_training_230730_2'
+
     # 取12个epoch的模型求权重平均
     for i in range(12):
         model_name = 'model_0' + str(190749 + 1750 * i) + '.pdmodel'

@@ -50,8 +50,8 @@ dataloader.test = [
                         )],
                         mode='test',
                         is_padding=True),
-                total_batch_size=3, 
-                worker_num=3, 
+                total_batch_size=4, 
+                worker_num=4, 
                 drop_last=False, 
                 shuffle=False,
                 num_classes=seg_num_classes,
@@ -76,8 +76,8 @@ dataloader.test = [
                     is_train=False,  # infer mode
                     
                 ),
-                test_batch_size=3,
-                num_workers=3,
+                test_batch_size=4,
+                num_workers=4,
             ),
         ),
     ),
@@ -112,8 +112,8 @@ dataloader.test = [
                     dataset_dir= _root + '/test_data/dec/',
                     data_fields=['image', 'im_id', 'im_file'],
                 ),
-                total_batch_size=2,
-                num_workers=2,
+                total_batch_size=4,
+                num_workers=4,
                 batch_transforms=[
                     dict(PadMaskBatch=dict(pad_to_stride=32, return_pad_mask=False),),
                 ],
@@ -237,6 +237,6 @@ model=L(MultiTaskBatchFuse)(
 
 
 train.amp.enabled = False
-train.init_checkpoint = 'averaged_model_weights_fade_aug.pdparams'
+train.init_checkpoint = '/home/Lian.qy/HHD2/Open-TransMind/PAZHOU/base/averaged_model_weights_fade_aug.pdparams'
 
-train.output_dir = 'outputs/test_swin_small_230730_1'
+train.output_dir = 'outputs/test_swin_small_jointtraining'

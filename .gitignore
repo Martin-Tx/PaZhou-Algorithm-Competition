@@ -1,4 +1,6 @@
 base/datasets/*
 base/outputs/*
 base/pretrained/*
+base/logs/*
 
+.history

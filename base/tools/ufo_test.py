@@ -54,7 +54,6 @@ def do_test(cfg, model, _run=None, subnet_mode="largest"):
             print('=' * 10, dataset_name, '=' * 10)
             # recognition
             if hasattr(list(dataloader.task_loaders.values())[0].dataset, 'num_query'):
-                continue
                 evaluator_cfg.num_query = list(dataloader.task_loaders.values())[0].dataset.num_query
                 evaluator_cfg.num_valid_samples = list(dataloader.task_loaders.values())[0].dataset.num_valid_samples
                 evaluator_cfg.labels = list(dataloader.task_loaders.values())[0].dataset.labels
@@ -62,7 +61,6 @@ def do_test(cfg, model, _run=None, subnet_mode="largest"):
                 ret = inference_on_cls_dataset(model, dataloader, evaluator)
             # segmentation
             elif dataset_name in['Cityscapes', 'BDD100K', 'InferDataset']:
-                continue
                 evaluator = instantiate(evaluator_cfg)
                 print("seg_inference_on_test_dataset")
                 ret = seg_inference_on_test_dataset(model, dataloader, evaluator)

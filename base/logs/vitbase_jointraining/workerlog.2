@@ -31682,3 +31682,909 @@ Traceback (most recent call last):
 ValueError: (InvalidArgument) All inputs should be in CudaPlace.
   [Hint: Expected CheckTensorsInCudaPlace(in_tensors) == true, but received CheckTensorsInCudaPlace(in_tensors):0 != true:1.] (at /paddle/paddle/fluid/distributed/collective/ProcessGroupNCCL.cc:950)
 
+./detectron2/data/transforms/transform.py:46: DeprecationWarning: LINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  def __init__(self, src_rect, output_size, interp=Image.LINEAR, fill=0):
+./detectron2/data/transforms/augmentation_impl.py:113: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  def __init__(self, shape, interp=Image.BILINEAR):
+./detectron2/data/transforms/augmentation_impl.py:140: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  self, short_edge_length, max_size=sys.maxsize, sample_style="range", interp=Image.BILINEAR
+./detectron2/data/transforms/augmentation_impl.py:214: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  interp: int = Image.BILINEAR,
+/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torchvision/transforms/functional_pil.py:207: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  def resize(img, size, interpolation=Image.BILINEAR, max_size=None):
+/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torchvision/transforms/functional_pil.py:283: DeprecationWarning: BICUBIC is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BICUBIC instead.
+  def perspective(img, perspective_coeffs, interpolation=Image.BICUBIC, fill=None):
+rank is 2, world size is 4
+I0810 19:41:17.047698 1969351 gen_comm_id_helper.cc:205] Server listening on: 127.0.0.1:37167 successful.
+I0810 19:41:20.052654 1969351 nccl_context.cc:83] init nccl context nranks: 4 local rank: 2 gpu id: 2 ring id: 0
+W0810 19:41:20.533779 1969351 gpu_resources.cc:61] Please NOTE: device: 2, GPU Compute Capability: 8.6, Driver API Version: 12.0, Runtime API Version: 11.1
+W0810 19:41:20.538043 1969351 gpu_resources.cc:91] device: 2, cuDNN Version: 8.2.
+[08/10 19:41:22 ufo]: Rank of current process: 0. World size: 1
+[08/10 19:41:28 ufo]: Environment info:
+----------------------  ----------------------------------------------------------------------------------------------------------
+sys.platform            linux
+Python                  3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+numpy                   1.21.6
+detectron2              imported a wrong installation
+detectron2._C           not built correctly: {e}
+Compiler ($CXX)         c++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+CUDA compiler           Build cuda_11.1.TC455_06.29069683_0
+DETECTRON2_ENV_MODULE   <not set>
+PyTorch                 1.9.1+cu111 @/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torch
+PyTorch debug build     False
+GPU available           Yes
+GPU 0,1,2,3             NVIDIA GeForce RTX 3090 (arch={cap})
+Driver version          525.125.06
+CUDA_HOME               /usr/local/cuda-11.1
+Pillow                  9.1.1
+torchvision             0.10.1+cu111 @/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torchvision
+torchvision arch flags  3.5, 5.0, 6.0, 7.0, 7.5, 8.0, 8.6
+fvcore                  0.1.5.post20221221
+iopath                  0.1.10
+cv2                     4.8.0
+----------------------  ----------------------------------------------------------------------------------------------------------
+PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.1.2 (Git Hash 98be7e8afa711dc9b66c8ff3504129cb82013cdb)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.0.5
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.1, CUDNN_VERSION=8.0.5, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.9.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+[08/10 19:41:28 ufo]: Command line arguments: Namespace(config_file='configs/test_swin_small_230730_1.py', dist_url='tcp://127.0.0.1:50167', eval_only=True, machine_rank=0, num_gpus=1, num_machines=1, opts=[], resume=False)
+[08/10 19:41:28 ufo]: Contents of args.config_file=configs/test_swin_small_230730_1.py:
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15m.[39m[38;5;15mcommon[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mtrain[39m
+[38;5;197mimport[39m[38;5;15m [39m[38;5;15mos[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15momegaconf[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mOmegaConf[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mcollections[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mOrderedDict[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdetectron2[39m[38;5;15m.[39m[38;5;15mconfig[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mLazyCall[39m[38;5;15m [39m[38;5;81mas[39m[38;5;15m [39m[38;5;15mL[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMultiTaskDataLoader[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mmeta_arch[39m[38;5;15m.[39m[38;5;15mmultitask_v3[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMultiTaskBatchFuse[39m
+
+[38;5;242m# segmentation[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mtransforms[39m[38;5;15m.[39m[38;5;15mseg_transforms[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mNormalize[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mResize[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mResizeByShort[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild_segmentation[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_segmentation_trainloader[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m\[39m
+[38;5;15m    [39m[38;5;15mbuild_segementation_test_dataset[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mevaluation[39m[38;5;15m.[39m[38;5;15msegmentation_evaluator[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mSegEvaluatorInfer[39m
+
+[38;5;242m# classification[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_reid_test_loader_lazy[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mtransforms[39m[38;5;15m.[39m[38;5;15mbuild[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_transforms_lazy[39m
+
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild_cls[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_hierachical_test_set[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mevaluation[39m[38;5;15m.[39m[38;5;15mcommon_cls_evaluator[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mCommonClasEvaluatorSingleTaskInfer[39m
+
+[38;5;242m# detection[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild_trafficsign[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_cocodet_set[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mbuild_cocodet_loader_lazy[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mevaluation[39m[38;5;15m.[39m[38;5;15mcocodet_evaluator[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mCocoDetEvaluatorSingleTaskInfer[39m
+
+[38;5;15mdataloader[39m[38;5;197m=[39m[38;5;15mOmegaConf[39m[38;5;197m.[39m[38;5;15mcreate[39m[38;5;15m([39m[38;5;15m)[39m
+[38;5;15m_root[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15mos[39m[38;5;197m.[39m[38;5;15mgetenv[39m[38;5;15m([39m[38;5;186m"[39m[38;5;186mFASTREID_DATASETS[39m[38;5;186m"[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mdatasets[39m[38;5;186m"[39m[38;5;15m)[39m
+
+[38;5;15mseg_num_classes[39m[38;5;197m=[39m[38;5;141m19[39m
+
+[38;5;242m# NOTE[39m
+[38;5;242m# trian/eval模式用于构建对应的train/eval Dataset, 需提供样本及标签;[39m
+[38;5;242m# infer模式用于构建InferDataset, 只需提供测试数据, 最终生成结果文件用于提交评测, 在训练时可将该部分代码注释减少不必要评测[39m
+
+[38;5;15mdataloader[39m[38;5;197m.[39m[38;5;15mtest[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m[[39m
+[38;5;15m    [39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskDataLoader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15msample_mode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbatch[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mtask_loaders[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15msegmentation[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_segmentation_trainloader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mdata_set[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_segementation_test_dataset[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                        [39m[38;5;15mdataset_name[39m[38;5;197m=[39m[38;5;186m"[39m[38;5;186mInferDataset[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mdataset_root[39m[38;5;197m=[39m[38;5;15m_root[39m[38;5;15m [39m[38;5;197m+[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/test_data/seg/[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                        [39m[38;5;15mtransforms[39m[38;5;197m=[39m[38;5;15m[[39m
+[38;5;15m                            [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mResize[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mNormalize[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                                [39m[38;5;15mmean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                                [39m[38;5;15mstd[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m][39m
+[38;5;15m                        [39m[38;5;15m)[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mmode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mtest[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mis_padding[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mtotal_batch_size[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mworker_num[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mdrop_last[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mshuffle[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mseg_num_classes[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskDataLoader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15msample_mode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbatch[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mtask_loaders[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15mfgvc[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_reid_test_loader_lazy[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mtest_set[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_hierachical_test_set[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                    [39m[38;5;15mdataset_name[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mFGVCInferDataset[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mtest_dataset_dir[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m_root[39m[38;5;15m [39m[38;5;197m+[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/test_data/cls/test/[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mtransforms[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_transforms_lazy[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                        [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15msize_test[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m448[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m448[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mmean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mstd[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# infer mode[39m
+[38;5;15m                    [39m
+[38;5;15m                [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mtest_batch_size[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mnum_workers[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskDataLoader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15msample_mode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbatch[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mtask_loaders[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m[38;5;15m           [39m
+[38;5;15m            [39m[38;5;15mtrafficsign[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_cocodet_loader_lazy[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mdata_set[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_cocodet_set[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                    [39m[38;5;15mis_padding[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mdataset_name[39m[38;5;197m=[39m[38;5;186m"[39m[38;5;186mCOCOInferDataSet[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mtransforms[39m[38;5;197m=[39m[38;5;15m[[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mDecode[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mResize[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mtarget_size[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m1280[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m1280[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                            [39m[38;5;15mkeep_ratio[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m)[39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;242m# dict(MultiscaleTestResize=dict([39m
+[38;5;15m                        [39m[38;5;242m#     origin_target_size=[2048, 2048],[39m
+[38;5;15m                        [39m[38;5;242m#     target_size=[1024, 1024],[39m
+[38;5;15m                        [39m[38;5;242m#     use_flip=True[39m
+[38;5;15m                        [39m[38;5;242m# )),[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mNormalizeImage[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mis_scale[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                            [39m[38;5;15mmean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                            [39m[38;5;15mstd[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m][39m[38;5;15m)[39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mPermute[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15m)[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mimage_dir[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mtest.txt[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15manno_path[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mval.json[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# 可以采用验证集或训练集json,只是为了获取类别ID映射关系[39m
+[38;5;15m                    [39m[38;5;15mdataset_dir[39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m_root[39m[38;5;15m [39m[38;5;197m+[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/test_data/dec/[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mdata_fields[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;186m'[39m[38;5;186mimage[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186mim_id[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186mim_file[39m[38;5;186m'[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mtotal_batch_size[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mnum_workers[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mbatch_transforms[39m[38;5;197m=[39m[38;5;15m[[39m
+[38;5;15m                    [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mPadMaskBatch[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mpad_to_stride[39m[38;5;197m=[39m[38;5;141m32[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mreturn_pad_mask[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mshuffle[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mdrop_last[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mcollate_batch[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m    [39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m][39m
+
+[38;5;242m# NOTE[39m
+[38;5;242m# trian/eval模式用于eval;[39m
+[38;5;242m# infer模式则用于生成测试集预测结果(可直接提交评测), 在训练时可注释该部分代码减少不必要评测[39m
+
+[38;5;15mdataloader[39m[38;5;197m.[39m[38;5;15mevaluator[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m[[39m
+[38;5;15m    [39m[38;5;242m# segmentation[39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mSegEvaluatorInfer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# infer mode[39m
+
+[38;5;15m    [39m[38;5;242m# classification[39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mCommonClasEvaluatorSingleTaskInfer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;141m196[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m   [39m[38;5;242m# infer mode[39m
+
+[38;5;15m    [39m[38;5;242m# detection[39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mCocoDetEvaluatorSingleTaskInfer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mclasswise[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m        [39m[38;5;15moutput_eval[39m[38;5;197m=[39m[38;5;81mNone[39m[38;5;15m,[39m[38;5;15m     [39m
+[38;5;15m        [39m[38;5;15mbias[39m[38;5;197m=[39m[38;5;141m0[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m        [39m[38;5;15mIouType[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbbox[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m        [39m[38;5;15msave_prediction_only[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mparallel_evaluator[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mnum_valid_samples[39m[38;5;197m=[39m[38;5;141m3067[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# infer mode[39m
+
+[38;5;15m][39m
+
+
+
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mShapeSpec[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mbackbones[39m[38;5;15m.[39m[38;5;15mswin_transformer[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mSwinTransformer_small_patch4_window7_224_maskformer[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mswin_cls_head[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mSwinClsHead[39m
+
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mdetr[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDETR[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mtransformers[39m[38;5;15m.[39m[38;5;15mdino_transformer[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDINOTransformer[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mtransformers[39m[38;5;15m.[39m[38;5;15mmatchers[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mHungarianMatcher[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mdetr_head[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDINOHead[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mpost_process[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDETRBBoxPostProcess[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mlosses[39m[38;5;15m.[39m[38;5;15mdetr_loss[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDINOLoss[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mmaskformer_head[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMaskFormer[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mlosses[39m[38;5;15m.[39m[38;5;15mmaskformer_loss[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMaskFormerLoss[39m
+
+[38;5;15mbackbone[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mSwinTransformer_small_patch4_window7_224_maskformer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m)[39m
+
+[38;5;15mtrafficsign_num_classes[39m[38;5;197m=[39m[38;5;141m45[39m
+[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;81mTrue[39m
+
+[38;5;15mmodel[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskBatchFuse[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m    [39m[38;5;15mbackbone[39m[38;5;197m=[39m[38;5;15mbackbone[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpretrained[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpretrain_path[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mpretrained/SwinTransformer_tiny_patch4_window7_224_pretrained.pdparams[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mheads[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15msegmentation[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMaskFormer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mseg_num_classes[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15mloss[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMaskFormerLoss[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mseg_num_classes[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15meos_coef[39m[38;5;197m=[39m[38;5;141m0.1[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m        [39m[38;5;15mfgvc[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mSwinClsHead[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15membedding_size[39m[38;5;197m=[39m[38;5;141m384[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m            [39m[38;5;15mclass_num[39m[38;5;197m=[39m[38;5;141m196[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m        [39m[38;5;15mtrafficsign[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDETR[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15mtransformer[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDINOTransformer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mtrafficsign_num_classes[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mhidden_dim[39m[38;5;197m=[39m[38;5;141m256[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_queries[39m[38;5;197m=[39m[38;5;141m900[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mposition_embed_type[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186msine[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mreturn_intermediate_dec[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mbackbone_feat_channels[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m96[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m192[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m384[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m768[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_levels[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_encoder_points[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_decoder_points[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnhead[39m[38;5;197m=[39m[38;5;141m8[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_encoder_layers[39m[38;5;197m=[39m[38;5;141m6[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_decoder_layers[39m[38;5;197m=[39m[38;5;141m6[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mdim_feedforward[39m[38;5;197m=[39m[38;5;141m2048[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mdropout[39m[38;5;197m=[39m[38;5;141m0.0[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mactivation[39m[38;5;197m=[39m[38;5;186m"[39m[38;5;186mrelu[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_denoising[39m[38;5;197m=[39m[38;5;141m100[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mlabel_noise_ratio[39m[38;5;197m=[39m[38;5;141m0.5[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mbox_noise_scale[39m[38;5;197m=[39m[38;5;141m1.0[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mlearnt_init_query[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15meps[39m[38;5;197m=[39m[38;5;141m1e-2[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15mdetr_head[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDINOHead[39m[38;5;15m)[39m[38;5;15m([39m[38;5;15mloss[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDINOLoss[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mtrafficsign_num_classes[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mloss_coeff[39m[38;5;197m=[39m[38;5;15m{[39m[38;5;186m"[39m[38;5;186mclass[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m1[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mbbox[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m5[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mgiou[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m2[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mno_object[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m0.1[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mmask[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m1[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mdice[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m1[39m[38;5;15m}[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15maux_loss[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;15muse_focal_loss[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mmatcher[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mHungarianMatcher[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                                [39m[38;5;15mmatcher_coeff[39m[38;5;197m=[39m[38;5;15m{[39m[38;5;186m"[39m[38;5;186mclass[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m2[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mbbox[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m5[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mgiou[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m2[39m[38;5;15m}[39m[38;5;15m,[39m
+[38;5;15m                                [39m[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;15muse_focal_loss[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m   [39m
+[38;5;15m                            [39m[38;5;15m)[39m
+[38;5;15m           [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15mpost_process[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDETRBBoxPostProcess[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mtrafficsign_num_classes[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_top_queries[39m[38;5;197m=[39m[38;5;141m50[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;15muse_focal_loss[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpixel_mean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpixel_std[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m)[39m
+
+
+[38;5;15mtrain[39m[38;5;197m.[39m[38;5;15mamp[39m[38;5;197m.[39m[38;5;15menabled[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;81mFalse[39m
+[38;5;15mtrain[39m[38;5;197m.[39m[38;5;15minit_checkpoint[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/home/Lian.qy/HHD2/Open-TransMind/PAZHOU/base/averaged_model_weights_fade_aug.pdparams[39m[38;5;186m'[39m
+
+[38;5;15mtrain[39m[38;5;197m.[39m[38;5;15moutput_dir[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186moutputs/test_swin_small_230730_1[39m[38;5;186m'[39m
+
+[08/10 19:41:28 ufo]: Full config saved to outputs/test_swin_small_230730_1/config.yaml
+missing keys: []
+unexpected keys: []
+InferDataset has 1000 samples
+InferDataset has 1000 samples after padding
+rank 2 has 250 items
+loading annotations into memory...
+Done (t=0.03s)
+creating index...
+index created!
+COCOInferDataSet has 3067 samples
+COCOInferDataSet has 3068 samples after padding
+rank 2 has 767 items
+========== InferDataset ==========
+========== FGVCInferDataset ==========
+========== COCOInferDataSet ==========
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/home/Lian.qy/miniconda3/envs/ufo/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 620, in _get_data
+    data = self._data_queue.get(timeout=self._timeout)
+  File "/home/Lian.qy/miniconda3/envs/ufo/lib/python3.7/multiprocessing/queues.py", line 105, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/Lian.qy/miniconda3/envs/ufo/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/home/Lian.qy/miniconda3/envs/ufo/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/Lian.qy/miniconda3/envs/ufo/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 534, in _thread_loop
+    batch = self._get_data()
+  File "/home/Lian.qy/miniconda3/envs/ufo/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 636, in _get_data
+    "pids: {}".format(len(failed_workers), pids))
+RuntimeError: DataLoader 3 workers exit unexpectedly, pids: 1973655, 1973663, 1973664
+
+./detectron2/data/transforms/transform.py:46: DeprecationWarning: LINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  def __init__(self, src_rect, output_size, interp=Image.LINEAR, fill=0):
+./detectron2/data/transforms/augmentation_impl.py:113: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  def __init__(self, shape, interp=Image.BILINEAR):
+./detectron2/data/transforms/augmentation_impl.py:140: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  self, short_edge_length, max_size=sys.maxsize, sample_style="range", interp=Image.BILINEAR
+./detectron2/data/transforms/augmentation_impl.py:214: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  interp: int = Image.BILINEAR,
+/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torchvision/transforms/functional_pil.py:207: DeprecationWarning: BILINEAR is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BILINEAR instead.
+  def resize(img, size, interpolation=Image.BILINEAR, max_size=None):
+/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torchvision/transforms/functional_pil.py:283: DeprecationWarning: BICUBIC is deprecated and will be removed in Pillow 10 (2023-07-01). Use Resampling.BICUBIC instead.
+  def perspective(img, perspective_coeffs, interpolation=Image.BICUBIC, fill=None):
+rank is 2, world size is 4
+I0810 19:54:04.822836 1988786 gen_comm_id_helper.cc:205] Server listening on: 127.0.0.1:42093 successful.
+I0810 19:54:07.831691 1988786 nccl_context.cc:83] init nccl context nranks: 4 local rank: 2 gpu id: 2 ring id: 0
+W0810 19:54:08.380594 1988786 gpu_resources.cc:61] Please NOTE: device: 2, GPU Compute Capability: 8.6, Driver API Version: 12.0, Runtime API Version: 11.1
+W0810 19:54:08.383899 1988786 gpu_resources.cc:91] device: 2, cuDNN Version: 8.2.
+[08/10 19:54:10 ufo]: Rank of current process: 0. World size: 1
+[08/10 19:54:16 ufo]: Environment info:
+----------------------  ----------------------------------------------------------------------------------------------------------
+sys.platform            linux
+Python                  3.7.16 (default, Jan 17 2023, 22:20:44) [GCC 11.2.0]
+numpy                   1.21.6
+detectron2              imported a wrong installation
+detectron2._C           not built correctly: {e}
+Compiler ($CXX)         c++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+CUDA compiler           Build cuda_11.1.TC455_06.29069683_0
+DETECTRON2_ENV_MODULE   <not set>
+PyTorch                 1.9.1+cu111 @/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torch
+PyTorch debug build     False
+GPU available           Yes
+GPU 0,1,2,3             NVIDIA GeForce RTX 3090 (arch={cap})
+Driver version          525.125.06
+CUDA_HOME               /usr/local/cuda-11.1
+Pillow                  9.1.1
+torchvision             0.10.1+cu111 @/home/amax/DATA_HHD2/Lian.qy/miniconda3/envs/pcdet_1/lib/python3.7/site-packages/torchvision
+torchvision arch flags  3.5, 5.0, 6.0, 7.0, 7.5, 8.0, 8.6
+fvcore                  0.1.5.post20221221
+iopath                  0.1.10
+cv2                     4.8.0
+----------------------  ----------------------------------------------------------------------------------------------------------
+PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.1.2 (Git Hash 98be7e8afa711dc9b66c8ff3504129cb82013cdb)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.0.5
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.1, CUDNN_VERSION=8.0.5, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.9.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+[08/10 19:54:16 ufo]: Command line arguments: Namespace(config_file='configs/test_swin_small_230730_1.py', dist_url='tcp://127.0.0.1:50167', eval_only=True, machine_rank=0, num_gpus=1, num_machines=1, opts=[], resume=False)
+[08/10 19:54:16 ufo]: Contents of args.config_file=configs/test_swin_small_230730_1.py:
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15m.[39m[38;5;15mcommon[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mtrain[39m
+[38;5;197mimport[39m[38;5;15m [39m[38;5;15mos[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15momegaconf[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mOmegaConf[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mcollections[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mOrderedDict[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdetectron2[39m[38;5;15m.[39m[38;5;15mconfig[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mLazyCall[39m[38;5;15m [39m[38;5;81mas[39m[38;5;15m [39m[38;5;15mL[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMultiTaskDataLoader[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mmeta_arch[39m[38;5;15m.[39m[38;5;15mmultitask_v3[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMultiTaskBatchFuse[39m
+
+[38;5;242m# segmentation[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mtransforms[39m[38;5;15m.[39m[38;5;15mseg_transforms[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mNormalize[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mResize[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mResizeByShort[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild_segmentation[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_segmentation_trainloader[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15m\[39m
+[38;5;15m    [39m[38;5;15mbuild_segementation_test_dataset[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mevaluation[39m[38;5;15m.[39m[38;5;15msegmentation_evaluator[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mSegEvaluatorInfer[39m
+
+[38;5;242m# classification[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_reid_test_loader_lazy[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mtransforms[39m[38;5;15m.[39m[38;5;15mbuild[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_transforms_lazy[39m
+
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild_cls[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_hierachical_test_set[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mevaluation[39m[38;5;15m.[39m[38;5;15mcommon_cls_evaluator[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mCommonClasEvaluatorSingleTaskInfer[39m
+
+[38;5;242m# detection[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mdata[39m[38;5;15m.[39m[38;5;15mbuild_trafficsign[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mbuild_cocodet_set[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mbuild_cocodet_loader_lazy[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mevaluation[39m[38;5;15m.[39m[38;5;15mcocodet_evaluator[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mCocoDetEvaluatorSingleTaskInfer[39m
+
+[38;5;15mdataloader[39m[38;5;197m=[39m[38;5;15mOmegaConf[39m[38;5;197m.[39m[38;5;15mcreate[39m[38;5;15m([39m[38;5;15m)[39m
+[38;5;15m_root[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15mos[39m[38;5;197m.[39m[38;5;15mgetenv[39m[38;5;15m([39m[38;5;186m"[39m[38;5;186mFASTREID_DATASETS[39m[38;5;186m"[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mdatasets[39m[38;5;186m"[39m[38;5;15m)[39m
+
+[38;5;15mseg_num_classes[39m[38;5;197m=[39m[38;5;141m19[39m
+
+[38;5;242m# NOTE[39m
+[38;5;242m# trian/eval模式用于构建对应的train/eval Dataset, 需提供样本及标签;[39m
+[38;5;242m# infer模式用于构建InferDataset, 只需提供测试数据, 最终生成结果文件用于提交评测, 在训练时可将该部分代码注释减少不必要评测[39m
+
+[38;5;15mdataloader[39m[38;5;197m.[39m[38;5;15mtest[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m[[39m
+[38;5;15m    [39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskDataLoader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15msample_mode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbatch[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mtask_loaders[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15msegmentation[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_segmentation_trainloader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mdata_set[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_segementation_test_dataset[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                        [39m[38;5;15mdataset_name[39m[38;5;197m=[39m[38;5;186m"[39m[38;5;186mInferDataset[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mdataset_root[39m[38;5;197m=[39m[38;5;15m_root[39m[38;5;15m [39m[38;5;197m+[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/test_data/seg/[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                        [39m[38;5;15mtransforms[39m[38;5;197m=[39m[38;5;15m[[39m
+[38;5;15m                            [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mResize[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mNormalize[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                                [39m[38;5;15mmean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                                [39m[38;5;15mstd[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m][39m
+[38;5;15m                        [39m[38;5;15m)[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mmode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mtest[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mis_padding[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mtotal_batch_size[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mworker_num[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mdrop_last[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mshuffle[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mseg_num_classes[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskDataLoader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15msample_mode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbatch[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mtask_loaders[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15mfgvc[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_reid_test_loader_lazy[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mtest_set[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_hierachical_test_set[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                    [39m[38;5;15mdataset_name[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mFGVCInferDataset[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mtest_dataset_dir[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m_root[39m[38;5;15m [39m[38;5;197m+[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/test_data/cls/test/[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mtransforms[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_transforms_lazy[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                        [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15msize_test[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m448[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m448[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mmean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mstd[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# infer mode[39m
+[38;5;15m                    [39m
+[38;5;15m                [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mtest_batch_size[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mnum_workers[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskDataLoader[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15msample_mode[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbatch[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mtask_loaders[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m[38;5;15m           [39m
+[38;5;15m            [39m[38;5;15mtrafficsign[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_cocodet_loader_lazy[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mdata_set[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mbuild_cocodet_set[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                    [39m[38;5;15mis_padding[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mdataset_name[39m[38;5;197m=[39m[38;5;186m"[39m[38;5;186mCOCOInferDataSet[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mtransforms[39m[38;5;197m=[39m[38;5;15m[[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mDecode[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mResize[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mtarget_size[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m1280[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m1280[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                            [39m[38;5;15mkeep_ratio[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m)[39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;242m# dict(MultiscaleTestResize=dict([39m
+[38;5;15m                        [39m[38;5;242m#     origin_target_size=[2048, 2048],[39m
+[38;5;15m                        [39m[38;5;242m#     target_size=[1024, 1024],[39m
+[38;5;15m                        [39m[38;5;242m#     use_flip=True[39m
+[38;5;15m                        [39m[38;5;242m# )),[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mNormalizeImage[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mis_scale[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                            [39m[38;5;15mmean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m][39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                            [39m[38;5;15mstd[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m][39m[38;5;15m)[39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                        [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mPermute[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15m)[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mimage_dir[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mtest.txt[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15manno_path[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mval.json[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# 可以采用验证集或训练集json,只是为了获取类别ID映射关系[39m
+[38;5;15m                    [39m[38;5;15mdataset_dir[39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m_root[39m[38;5;15m [39m[38;5;197m+[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/test_data/dec/[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                    [39m[38;5;15mdata_fields[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;186m'[39m[38;5;186mimage[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186mim_id[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186mim_file[39m[38;5;186m'[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mtotal_batch_size[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mnum_workers[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mbatch_transforms[39m[38;5;197m=[39m[38;5;15m[[39m
+[38;5;15m                    [39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mPadMaskBatch[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15mpad_to_stride[39m[38;5;197m=[39m[38;5;141m32[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mreturn_pad_mask[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mis_train[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15mshuffle[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mdrop_last[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m                [39m[38;5;15mcollate_batch[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m    [39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m][39m
+
+[38;5;242m# NOTE[39m
+[38;5;242m# trian/eval模式用于eval;[39m
+[38;5;242m# infer模式则用于生成测试集预测结果(可直接提交评测), 在训练时可注释该部分代码减少不必要评测[39m
+
+[38;5;15mdataloader[39m[38;5;197m.[39m[38;5;15mevaluator[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;15m[[39m
+[38;5;15m    [39m[38;5;242m# segmentation[39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mSegEvaluatorInfer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# infer mode[39m
+
+[38;5;15m    [39m[38;5;242m# classification[39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mCommonClasEvaluatorSingleTaskInfer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mcfg[39m[38;5;197m=[39m[38;5;15mdict[39m[38;5;15m([39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;141m196[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m   [39m[38;5;242m# infer mode[39m
+
+[38;5;15m    [39m[38;5;242m# detection[39m
+[38;5;15m    [39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mCocoDetEvaluatorSingleTaskInfer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15mclasswise[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m        [39m[38;5;15moutput_eval[39m[38;5;197m=[39m[38;5;81mNone[39m[38;5;15m,[39m[38;5;15m     [39m
+[38;5;15m        [39m[38;5;15mbias[39m[38;5;197m=[39m[38;5;141m0[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m        [39m[38;5;15mIouType[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mbbox[39m[38;5;186m'[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m        [39m[38;5;15msave_prediction_only[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mparallel_evaluator[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15mnum_valid_samples[39m[38;5;197m=[39m[38;5;141m3067[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m[38;5;15m  [39m[38;5;242m# infer mode[39m
+
+[38;5;15m][39m
+
+
+
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mShapeSpec[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mbackbones[39m[38;5;15m.[39m[38;5;15mswin_transformer[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mSwinTransformer_small_patch4_window7_224_maskformer[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mswin_cls_head[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mSwinClsHead[39m
+
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mdetr[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDETR[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mtransformers[39m[38;5;15m.[39m[38;5;15mdino_transformer[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDINOTransformer[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mtransformers[39m[38;5;15m.[39m[38;5;15mmatchers[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mHungarianMatcher[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mdetr_head[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDINOHead[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mpost_process[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDETRBBoxPostProcess[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mppdet[39m[38;5;15m.[39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mlosses[39m[38;5;15m.[39m[38;5;15mdetr_loss[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mDINOLoss[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mheads[39m[38;5;15m.[39m[38;5;15mmaskformer_head[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMaskFormer[39m
+[38;5;197mfrom[39m[38;5;15m [39m[38;5;15mmodeling[39m[38;5;15m.[39m[38;5;15mlosses[39m[38;5;15m.[39m[38;5;15mmaskformer_loss[39m[38;5;15m [39m[38;5;197mimport[39m[38;5;15m [39m[38;5;15mMaskFormerLoss[39m
+
+[38;5;15mbackbone[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mSwinTransformer_small_patch4_window7_224_maskformer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m)[39m
+
+[38;5;15mtrafficsign_num_classes[39m[38;5;197m=[39m[38;5;141m45[39m
+[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;81mTrue[39m
+
+[38;5;15mmodel[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMultiTaskBatchFuse[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m    [39m[38;5;15mbackbone[39m[38;5;197m=[39m[38;5;15mbackbone[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpretrained[39m[38;5;197m=[39m[38;5;81mFalse[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpretrain_path[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186mpretrained/SwinTransformer_tiny_patch4_window7_224_pretrained.pdparams[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mheads[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mOrderedDict[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m        [39m[38;5;15msegmentation[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMaskFormer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mseg_num_classes[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15mloss[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mMaskFormerLoss[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mseg_num_classes[39m[38;5;15m,[39m
+[38;5;15m                [39m[38;5;15meos_coef[39m[38;5;197m=[39m[38;5;141m0.1[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m        [39m[38;5;15mfgvc[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mSwinClsHead[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15membedding_size[39m[38;5;197m=[39m[38;5;141m384[39m[38;5;15m,[39m[38;5;15m [39m
+[38;5;15m            [39m[38;5;15mclass_num[39m[38;5;197m=[39m[38;5;141m196[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+
+[38;5;15m        [39m[38;5;15mtrafficsign[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDETR[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m            [39m[38;5;15mtransformer[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDINOTransformer[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mtrafficsign_num_classes[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mhidden_dim[39m[38;5;197m=[39m[38;5;141m256[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_queries[39m[38;5;197m=[39m[38;5;141m900[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mposition_embed_type[39m[38;5;197m=[39m[38;5;186m'[39m[38;5;186msine[39m[38;5;186m'[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mreturn_intermediate_dec[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mbackbone_feat_channels[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m96[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m192[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m384[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m768[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_levels[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_encoder_points[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_decoder_points[39m[38;5;197m=[39m[38;5;141m4[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnhead[39m[38;5;197m=[39m[38;5;141m8[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_encoder_layers[39m[38;5;197m=[39m[38;5;141m6[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_decoder_layers[39m[38;5;197m=[39m[38;5;141m6[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mdim_feedforward[39m[38;5;197m=[39m[38;5;141m2048[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mdropout[39m[38;5;197m=[39m[38;5;141m0.0[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mactivation[39m[38;5;197m=[39m[38;5;186m"[39m[38;5;186mrelu[39m[38;5;186m"[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_denoising[39m[38;5;197m=[39m[38;5;141m100[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mlabel_noise_ratio[39m[38;5;197m=[39m[38;5;141m0.5[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mbox_noise_scale[39m[38;5;197m=[39m[38;5;141m1.0[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mlearnt_init_query[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15meps[39m[38;5;197m=[39m[38;5;141m1e-2[39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15mdetr_head[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDINOHead[39m[38;5;15m)[39m[38;5;15m([39m[38;5;15mloss[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDINOLoss[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mtrafficsign_num_classes[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mloss_coeff[39m[38;5;197m=[39m[38;5;15m{[39m[38;5;186m"[39m[38;5;186mclass[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m1[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mbbox[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m5[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mgiou[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m2[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mno_object[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m0.1[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mmask[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m1[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mdice[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m1[39m[38;5;15m}[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15maux_loss[39m[38;5;197m=[39m[38;5;81mTrue[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;15muse_focal_loss[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mmatcher[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mHungarianMatcher[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                                [39m[38;5;15mmatcher_coeff[39m[38;5;197m=[39m[38;5;15m{[39m[38;5;186m"[39m[38;5;186mclass[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m2[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mbbox[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m5[39m[38;5;15m,[39m[38;5;15m [39m[38;5;186m"[39m[38;5;186mgiou[39m[38;5;186m"[39m[38;5;15m:[39m[38;5;15m [39m[38;5;141m2[39m[38;5;15m}[39m[38;5;15m,[39m
+[38;5;15m                                [39m[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;15muse_focal_loss[39m[38;5;15m,[39m[38;5;15m)[39m[38;5;15m   [39m
+[38;5;15m                            [39m[38;5;15m)[39m
+[38;5;15m           [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m            [39m[38;5;15mpost_process[39m[38;5;197m=[39m[38;5;15mL[39m[38;5;15m([39m[38;5;15mDETRBBoxPostProcess[39m[38;5;15m)[39m[38;5;15m([39m
+[38;5;15m                            [39m[38;5;15mnum_classes[39m[38;5;197m=[39m[38;5;15mtrafficsign_num_classes[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15mnum_top_queries[39m[38;5;197m=[39m[38;5;141m50[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15muse_focal_loss[39m[38;5;197m=[39m[38;5;15muse_focal_loss[39m[38;5;15m,[39m
+[38;5;15m                            [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m        [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15m)[39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpixel_mean[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.485[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.456[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.406[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m    [39m[38;5;15mpixel_std[39m[38;5;197m=[39m[38;5;15m[[39m[38;5;141m0.229[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.224[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m,[39m[38;5;15m [39m[38;5;141m0.225[39m[38;5;15m [39m[38;5;197m*[39m[38;5;15m [39m[38;5;141m255[39m[38;5;15m][39m[38;5;15m,[39m
+[38;5;15m)[39m
+
+
+[38;5;15mtrain[39m[38;5;197m.[39m[38;5;15mamp[39m[38;5;197m.[39m[38;5;15menabled[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;81mFalse[39m
+[38;5;15mtrain[39m[38;5;197m.[39m[38;5;15minit_checkpoint[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186m/home/Lian.qy/HHD2/Open-TransMind/PAZHOU/base/averaged_model_weights_fade_aug.pdparams[39m[38;5;186m'[39m
+
+[38;5;15mtrain[39m[38;5;197m.[39m[38;5;15moutput_dir[39m[38;5;15m [39m[38;5;197m=[39m[38;5;15m [39m[38;5;186m'[39m[38;5;186moutputs/test_swin_small_230730_1[39m[38;5;186m'[39m
+
+[08/10 19:54:16 ufo]: Full config saved to outputs/test_swin_small_230730_1/config.yaml
+missing keys: []
+unexpected keys: []
+InferDataset has 1000 samples
+InferDataset has 1000 samples after padding
+rank 2 has 250 items
+loading annotations into memory...
+Done (t=0.04s)
+creating index...
+index created!
+COCOInferDataSet has 3067 samples
+COCOInferDataSet has 3068 samples after padding
+rank 2 has 767 items
+========== InferDataset ==========
+seg_inference_on_test_dataset
+  0%|          | 0/250 [00:00<?, ?it/s]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+  2%|▏         | 4/250 [00:11<11:23,  2.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+  4%|▍         | 10/250 [00:21<08:23,  2.10s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+  6%|▋         | 16/250 [00:32<07:34,  1.94s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+  9%|▉         | 22/250 [00:43<07:07,  1.88s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 11%|█         | 28/250 [00:54<06:50,  1.85s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 14%|█▎        | 34/250 [01:04<06:36,  1.84s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 16%|█▌        | 40/250 [01:15<06:21,  1.82s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 18%|█▊        | 46/250 [01:26<06:10,  1.82s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 21%|██        | 52/250 [01:37<05:56,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 23%|██▎       | 58/250 [01:47<05:43,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 26%|██▌       | 64/250 [01:58<05:34,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 28%|██▊       | 70/250 [02:09<05:23,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 30%|███       | 76/250 [02:19<05:10,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 30%|███       | 76/250 [02:30<05:10,  1.79s/it] 33%|███▎      | 82/250 [02:30<05:02,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 35%|███▌      | 88/250 [02:41<04:49,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 38%|███▊      | 94/250 [02:52<04:38,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 40%|████      | 100/250 [03:03<04:30,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 42%|████▏     | 106/250 [03:13<04:17,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 45%|████▍     | 112/250 [03:24<04:05,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 47%|████▋     | 118/250 [03:34<03:55,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 50%|████▉     | 124/250 [03:45<03:44,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 52%|█████▏    | 130/250 [03:56<03:36,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 54%|█████▍    | 136/250 [04:07<03:24,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 57%|█████▋    | 142/250 [04:18<03:13,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 59%|█████▉    | 148/250 [04:28<03:01,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 62%|██████▏   | 154/250 [04:39<02:51,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 64%|██████▍   | 160/250 [04:49<02:39,  1.77s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 64%|██████▍   | 160/250 [05:00<02:39,  1.77s/it] 66%|██████▋   | 166/250 [05:01<02:31,  1.81s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 69%|██████▉   | 172/250 [05:11<02:20,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 71%|███████   | 178/250 [05:22<02:08,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 74%|███████▎  | 184/250 [05:33<01:57,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 76%|███████▌  | 190/250 [05:43<01:46,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 78%|███████▊  | 196/250 [05:54<01:35,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 81%|████████  | 202/250 [06:05<01:25,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 83%|████████▎ | 208/250 [06:16<01:16,  1.81s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 86%|████████▌ | 214/250 [06:27<01:05,  1.81s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 88%|████████▊ | 220/250 [06:37<00:53,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 90%|█████████ | 226/250 [06:48<00:43,  1.80s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 93%|█████████▎| 232/250 [06:59<00:32,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 95%|█████████▌| 238/250 [07:09<00:21,  1.79s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+ 95%|█████████▌| 238/250 [07:20<00:21,  1.79s/it] 98%|█████████▊| 244/250 [07:20<00:10,  1.78s/it]scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+scales: [1.0, 1.2, 1.4, 1.6, 1.8, 2.0]
+100%|██████████| 250/250 [07:31<00:00,  1.78s/it]100%|██████████| 250/250 [07:31<00:00,  1.81s/it]
+========== FGVCInferDataset ==========
+scales: [0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4]
+========== COCOInferDataSet ==========

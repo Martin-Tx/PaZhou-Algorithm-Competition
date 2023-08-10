@@ -60,7 +60,7 @@ dataloader.train=L(MultiTaskDataLoader)(
                                          sharpness_range=0.5, sharpness_prob=1.0),
 
                         L(RandomScaleAspect)(),  
-                        # 颜色类的都可以直接
+        
                         L(CLAHE)(prob=0.2), 
                         L(IAAEmboss)(prob=0.2), 
                         L(Hist)(prob=0.2), 
@@ -137,10 +137,9 @@ dataloader.train=L(MultiTaskDataLoader)(
                                 ),
                         ],
                         transforms2=[
-                            # 最小值不用太小，不然容易看不清楚
+                            
                             dict(RandomShortSideResize=dict(short_side_sizes=[400,500,600,700,800,900,1000,
-                                                                              1100, 1200
-                                                                              ]),),
+                                                                              1100, 1200]),),
                             dict(RandomSizeCrop=dict(
                                                      min_size=400, 
                                                      max_size=1200
@@ -148,7 +147,7 @@ dataloader.train=L(MultiTaskDataLoader)(
                             dict(RandomShortSideResize=dict(
                                 short_side_sizes=[
                                                 416, 448, 480, 512, 544, 576, 608,640, 672, 704, 736,
-                                                768, 800, 832, 864, 896, 928, 960, 992, 1024, 1056, 1088, 1120, 
+                                                768, 800, 832, 864, 896, 928, 960, 992, 1024, 1056, 1088, 1120
                                                 ], 
                                 max_size=1120)
                                 ),
@@ -205,9 +204,7 @@ dataloader.train=L(MultiTaskDataLoader)(
 # NOTE
 # trian/eval模式用于构建对应的train/eval Dataset, 需提供样本及标签;
 # infer模式用于构建InferDataset, 只需提供测试数据, 最终生成结果文件用于提交评测, 在训练时可将该部分代码注释减少不必要评测
-
 dataloader.test = [
-    
     L(MultiTaskDataLoader)(
         cfg=dict(sample_mode='batch',),
         task_loaders=L(OrderedDict)(
@@ -452,10 +449,10 @@ optimizer.lr_multiplier.solver_steps = [int(max_iters * 0.8)]
 train.max_iter = max_iters
 train.eval_period = int(iters_per_epoch * 1)
 train.checkpointer.period = int(iters_per_epoch * 1)
-train.checkpointer.max_to_keep=15
+train.checkpointer.max_to_keep=20
 
 train.init_checkpoint = None
-train.output_dir = 'outputs/swinbase_joint_training_230730_1'
+train.output_dir = 'outputs/swin_small_jointtraining'
 
 # resume settings (remember last_checkpoint and --resume)
 train.log_period = 20
