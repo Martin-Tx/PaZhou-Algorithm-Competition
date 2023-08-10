@@ -1,3 +1,38 @@
+# A 训练代码和对测试集的快速测试
+## 1）训练代码；
+
+1、下载数据集，在base路径下创建datasets目录，将验证集数据放入训练集中
+
+2、下载预训练权重，其下载地址为
+[预训练权重](https://pan.baidu.com/s/1FCud6pZ53_azbUdp5gclQg?pwd=chga)
+
+3、创建pretrained文件夹，将预训练权重SwinTransformer_small_patch4_window7_224_pretrained.pdparams放入pretrained目录中
+
+4、执行脚本，进行训练
+* 训练配置为4卡A40，显存48G
+```
+bash script/custom_train.sh
+```
+
+## 2）测试集的快速测试
+
+1、可直接下载[训练好的权重](https://pan.baidu.com/s/1FCud6pZ53_azbUdp5gclQg?pwd=chga)，并进行推理
+* 测试配置为4卡A40，显存48G
+```
+bash script/custom_test.sh
+```
+
+# B 提交模型文件对应的checkpoint
+[checkpoint](https://pan.baidu.com/s/1FCud6pZ53_azbUdp5gclQg?pwd=chga)
+
+
+
+# C 代码内容说明（启动训练及推理的方式、必要注释等）
+
+详见D部分
+
+
+# D 模型构建思路及调优过程
 ## （1）完整算法结构框图、思路步骤详述、代码组织结构介绍；
 算法结构框图如图所示:
 
