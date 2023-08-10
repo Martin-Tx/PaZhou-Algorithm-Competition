@@ -1,0 +1,1 @@
+[{'name': 'waolyt', 'rank': -1, 'replicas': 2, 'dtype': 'gpu', 'candidate': '172.17.0.2:56606', 'endpoints': '172.17.0.2:56607,172.17.0.2:56608'}]
