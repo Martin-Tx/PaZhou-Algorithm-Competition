@@ -1,14 +1,20 @@
 # A 训练代码和对测试集的快速测试
 ## 1）训练代码；
 
-1、下载数据集，在base路径下创建datasets目录，将验证集数据放入训练集中
+1、搭建环境
+```
+pip install -r base/requirements.txt
+```
 
-2、下载预训练权重，其下载地址为
+2、下载数据集，进入base路径
+创建datasets目录，将验证集数据放入训练集中
+
+3、下载预训练权重，其下载地址为
 [预训练权重](https://pan.baidu.com/s/1FCud6pZ53_azbUdp5gclQg?pwd=chga)
 
-3、创建pretrained文件夹，将预训练权重SwinTransformer_small_patch4_window7_224_pretrained.pdparams放入pretrained目录中
+4、创建pretrained文件夹，将预训练权重SwinTransformer_small_patch4_window7_224_pretrained.pdparams放入pretrained目录中
 
-4、执行脚本，进行训练
+5、执行脚本，进行训练
 * 训练配置为4卡A40，显存48G
 ```
 bash script/custom_train.sh
