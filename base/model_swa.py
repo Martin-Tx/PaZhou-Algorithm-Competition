@@ -6,7 +6,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Model weight averaging')
-    parser.add_argument('--model-dir',  help='the dir to save logs and models')
+    parser.add_argument('--model_dir', default=None, help='the dir to save logs and models')
     args = parser.parse_args()
     return args
 
@@ -37,8 +37,9 @@ def main():
     args = parse_args()
 
     weights_dicts = []
-    dir = args.model-dir
-
+    dir = args.model_dir
+    assert dir != None, "Please enter the model storage directory"
+    print(f'dir: {dir}')
     # 取12个epoch的模型求权重平均
     for i in range(12):
         model_name = 'model_0' + str(190749 + 1750 * i) + '.pdmodel'
@@ -51,6 +52,7 @@ def main():
     # 保存平均后的模型权重到文件
     save_path = "joint_train_averaged_model_weights.pdparams"
     paddle.save(averaged_state_dict, save_path)
+    print('-' * 15 + 'SWA finish' + '-' * 15)
 
 if __name__ == "__main__":
     main()

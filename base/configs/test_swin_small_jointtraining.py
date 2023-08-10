@@ -237,6 +237,6 @@ model=L(MultiTaskBatchFuse)(
 
 
 train.amp.enabled = False
-train.init_checkpoint = '/home/Lian.qy/HHD2/Open-TransMind/PAZHOU/base/averaged_model_weights_fade_aug.pdparams'
+train.init_checkpoint = './joint_train_averaged_model_weights.pdparams'
 
 train.output_dir = 'outputs/test_swin_small_jointtraining'

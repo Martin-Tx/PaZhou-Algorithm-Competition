@@ -1,4 +1,4 @@
-base/datasets/*
+base/datasets
 base/outputs/*
 base/pretrained/*
 base/logs/*

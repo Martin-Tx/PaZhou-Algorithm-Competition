@@ -210,5 +210,5 @@ bash script/custom_test.sh
 
 * 该方案使用了SWA，全称为“Stochastic Weight Averaging”(随机权重平均)，需要将训练出来的模型通过运行脚本使得模型权重平均
 ```
-python model_swa.py
+python model_swa.py --model_dir [模型存储目录]
 ```
